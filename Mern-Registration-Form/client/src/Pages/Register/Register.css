@@ -1,0 +1,15 @@
+.myImgDesign {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.RegisterDetails {
+    background-image: linear-gradient(to right, rgba(176, 10, 151, 0.7) , rgba(39, 184, 224, 0.7));
+}
+
+.colorWhite {
+    color: #ffffff;
+    font-weight: 500;
+}

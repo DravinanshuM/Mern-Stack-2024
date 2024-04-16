@@ -1,0 +1,9 @@
+.profile_img {
+    border-radius: 50%;
+    height: 170px;
+    width: 170px;
+} 
+
+.custom-bg {
+    background-color: rgb(195, 193, 243);
+}

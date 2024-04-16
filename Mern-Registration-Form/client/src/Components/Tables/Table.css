@@ -1,0 +1,31 @@
+/* Table.css */
+
+/* Ensure dropdown menus open outside the table */
+.dropdown-menu {
+    position: absolute;
+  }
+
+  .myTableImage {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  @media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .myNewTable, .myNewTable * {
+        visibility: visible;
+    }
+
+    .myNewTable {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+  
+  
