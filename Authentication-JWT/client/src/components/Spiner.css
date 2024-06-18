@@ -1,0 +1,25 @@
+/* Define styles for the loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 9999; /* Ensure the overlay appears on top of other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px); /* Apply a blur effect to the background */
+}
+
+/* Define styles for the loading indicator */
+.loading-indicator {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for the indicator */
+}

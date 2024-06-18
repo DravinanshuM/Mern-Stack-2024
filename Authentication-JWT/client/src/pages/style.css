@@ -1,0 +1,101 @@
+.loginBackground {
+    background-color: white;
+}
+
+.fontWeight400 {
+    font-weight: 500;
+}
+
+.registrationBackground {
+    background-color: white;
+}
+
+.Myheader {
+    position: absolute;
+    top: 10%;
+}
+.features {
+    position: absolute;
+    top: 50%;
+}
+
+.myShowHindeRegistration, .myShowHideLogin {
+    top: 50px;
+    background-color: lightgrey;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.myDashboard {
+    width: 100%; /* Ensure the image fills its container */
+    max-width: 200px; /* Adjust the max-width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* 100% radius will make it a circle */
+    border: 2px solid black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions */
+}
+
+.myDashboard:hover {
+    transform: scale(1.1); /* Scale the image up a bit on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+    z-index: 1; /* Ensure the image stays on top */
+    position: relative; /* Adjust the position */
+}
+
+
+/* For Error Page code */
+/* Error.css */
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .error-content {
+    text-align: center;
+  }
+  
+  .error-animation {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  /* For Page Not Found Page */
+  .error-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa; /* Optional: Set a background color */
+  }
+  
+  .error-contents {
+    text-align: center;
+  }
+  
+  .error-animation {
+    width: 60%; /* Adjust animation width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  
+  .error-button {
+    text-decoration: none;
+  }
+  
+  
+
+
