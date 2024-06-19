@@ -39,3 +39,7 @@ To install these packages, run the following command:
 ```bash
 npm install express mongodb dotenv nodemon
 ```
+
+# Package for install.
+
+1. npm i validator ::
