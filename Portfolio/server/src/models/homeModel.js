@@ -8,7 +8,7 @@ const introSchema = new mongoose.Schema(
       required: [true, "Welcome text is required"],
     },
 
-    firstname: {
+    firstName: {
       type: String,
       required: [true, "First Name is required"],
       minLength: [4, "First name must be at least 4 characters long"],

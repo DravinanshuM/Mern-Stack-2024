@@ -15,7 +15,7 @@ app.use(express.json()); //his middleware is used to parse incoming requests wit
 app.use(cors()); // If your application needs to handle cross-origin resource sharing (CORS), you can use the cors middleware to enable it for your Express server.
 
 app.use(express.urlencoded({ extended: true })); //It parses the incoming request body if the Content-Type header matches application/x-www-form-urlencoded.
-app.use(express.static("public")); //This middleware is used to serve static files such as images, CSS, JavaScript, etc., from a directory.
+app.use(express.static("../public")); //This middleware is used to serve static files such as images, CSS, JavaScript, etc., from a directory.
 
 // add here routers.
 app.use("/api/introduction/", homeRouter);
