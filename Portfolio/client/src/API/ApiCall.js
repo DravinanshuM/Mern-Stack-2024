@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const commonRequest = async (methods, url, body, header) => {
+  // step: 1. set the config.
   const config = {
     method: methods,
     url: url,
@@ -12,7 +13,7 @@ const commonRequest = async (methods, url, body, header) => {
         },
   };
 
-  // create axios instance.
+  // step 2. create axios instance.
   return axios(config)
     .then((data) => {
       return data;

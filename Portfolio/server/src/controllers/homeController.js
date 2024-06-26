@@ -6,7 +6,7 @@ const getAllIntro = async (req, res, next) => {
     const introData = await Intro.find();
     console.log("data", introData);
 
-    res.status(200).json(introData);
+    res.status(200).json({ status: 200, introData: introData });
   } catch (error) {
     return next(createHttpError(500, { message: error }));
   }
