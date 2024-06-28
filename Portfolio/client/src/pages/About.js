@@ -3,39 +3,35 @@ import banner from "../assets/new.png";
 import SectionTitle from "../components/SectionTitle";
 import { Experience, Project } from "./index.js";
 import { getAboutFunction } from "../API/Api.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setAboutData } from "../features/aboutSlice.js";
 
 const About = () => {
   const dispatch = useDispatch();
+  const { aboutData } = useSelector((state) => state.about);
+  console.log("aboutData", aboutData);
 
   // getAllAbout Data .
   const getAllAbout = useCallback(async () => {
     try {
       const response = await getAboutFunction();
-      console.log(response);
-      // if(response && response.data && )
+      // console.log(response);
+      if (response && response.data && response.data.status === 200) {
+        // console.log("About data:", response.data.aboutData);
+        dispatch(setAboutData(response.data.aboutData));
+      } else {
+        console.error("Invalid response or status code:", response);
+      }
     } catch (error) {
       console.error("Error fetching intro data:", error);
       // Handle error show a message to the user
     }
-  }, []);
+  }, [dispatch]);
 
   // useEffect.
   useEffect(() => {
     getAllAbout();
   }, [getAllAbout]);
-
-  // Recentaly Skills.
-  const skills = [
-    "JavaScript",
-    "Material UI",
-    "Tailwindcss",
-    "React.JS",
-    "Node.JS",
-    "Express.JS",
-    "MongoDB",
-  ];
 
   return (
     <div className="w-full h-auto py-6 pt-20 md:py-24 bg-indigo-300 dark:bg-gradient-to-r from-black/60 to-black/60">
@@ -45,59 +41,53 @@ const About = () => {
         </h1>
         <div className="md:w-20 w-12 border-b-4 dark:border-yellow-500 mt-2 md:mt-4 rounded-xl mb-4 md:mb-8"></div>
       </div>
-      {/* Introduction Section */}
-      <div className="w-full flex flex-wrap justify-center md:justify-around px-4 md:px-7 text-center md:text-start">
-        <div className="w-full md:w-1/2 mb-6 md:mb-0 order-2 md:order-1 border-2 border-slate-200 p-7 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2 text-black dark:text-white uppercase">
-            Introduction
-          </h2>
-          <div className="border-b-4 dark:border-yellow-500 mx-auto md:mx-0 mt-2 md:mt-4 mb-4 md:mb-8 w-20 md:w-60 rounded-xl"></div>
-          <div className="text-justify md:text-md text-gray-700 dark:text-white leading-7 text-base px-4 md:px-0">
-            <p>
-              Hello, my name is Dravinanshu Mishra. I am passionate about MERN
-              Stack Development, with a strong background in React.js and
-              Node.js. I have dedicated my career to being a Full Stack
-              Developer, striving to make a significant impact at Ucertify. With
-              a commitment to excellence and continuous learning, I am always
-              eager to embrace new challenges and opportunities.
-            </p>
-            <p>
-              I post-graduated from Integral University with an{" "}
-              <span className="bg-yellow-400 px-2 py-1/2 text-black rounded-md">
-                MCA
-              </span>{" "}
-              in Computer Science, achieving a 77%. During my time in college, I
-              honed my skills in web development and built a strong foundation
-              in both front-end and back-end technologies.
-            </p>
-          </div>
-        </div>
-        <div className="order-1 md:order-2">
-          <img
-            className="w-80 bg-transparent rounded-3xl mb-12"
-            src={banner}
-            alt="Banner_Image"
-          />
-        </div>
-      </div>
-      {/* Recetaly working */}
-      <div className="flex items-center justify-center md:mt-7 mt-0">
-        <div className="w-[85%] mt-7">
-          <h1 className="md:mx-5 md:text-xl text-lg font-semibold dark:text-white text-gray-900 mb-4">
-            Here are few technologies l've been working with recentaly:
-          </h1>
-          <div className="md:mx-5 flex flex-wrap md:gap-7 gap-4">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="border-2 dark:border-slate-400 p-2 dark:text-white rounded-lg"
-              >
-                {skill}
+      {aboutData && aboutData.length > 0 && (
+        <>
+          {/* Introduction Section */}
+          <div className="w-full flex flex-wrap justify-center md:justify-around px-4 md:px-7 text-center md:text-start">
+            <div className="w-full md:w-1/2 mb-6 md:mb-0 order-2 md:order-1 border-2 border-slate-200 p-7 rounded-xl">
+              <h2 className="text-xl font-semibold mb-2 text-black dark:text-white uppercase">
+                Introduction
+              </h2>
+              <div className="border-b-4 dark:border-yellow-500 mx-auto md:mx-0 mt-2 md:mt-4 mb-4 md:mb-8 w-20 md:w-60 rounded-xl"></div>
+              <div className="text-justify md:text-md text-gray-700 dark:text-white leading-7 text-base px-4 md:px-0">
+                <p>{aboutData[0].description}</p>
               </div>
-            ))}
+            </div>
+            <div className="order-1 md:order-2">
+              <img
+                className="w-80 bg-transparent rounded-3xl mb-12"
+                src={aboutData[0].profile || banner}
+                alt="Banner_Image"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = banner;
+                }}
+              />
+            </div>
           </div>
-        </div>
-      </div>
+          {/* Recetaly working */}
+          <div className="flex items-center justify-center md:mt-7 mt-0">
+            <div className="w-[85%] mt-7">
+              <h1 className="md:mx-5 md:text-xl text-lg font-semibold dark:text-white text-gray-900 mb-4">
+                Here are few technologies l've been working with recentaly:
+              </h1>
+              <div className="md:mx-5 flex flex-wrap md:gap-7 gap-4">
+                {aboutData[0].skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="border-2 dark:border-slate-400 p-2 dark:text-white rounded-lg"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* here */}
 
       {/* Experience Section */}
       <section
