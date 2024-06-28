@@ -6,7 +6,7 @@ const getAllContact = async (req, res, next) => {
     const contactData = await Contact.find();
     console.log(contactData);
 
-    res.status(200).json(contactData);
+    res.status(200).json({ status: 200, contactData: contactData });
   } catch (error) {
     return next(createHttpError(500, { message: error }));
   }

@@ -6,7 +6,7 @@ const getAllAbout = async (req, res, next) => {
     const aboutData = await About.find();
     console.log(aboutData);
 
-    res.status(200).json(aboutData);
+    res.status(200).json({ status: 200, aboutData: aboutData });
   } catch (error) {
     return next(createHttpError(500, { message: error }));
   }

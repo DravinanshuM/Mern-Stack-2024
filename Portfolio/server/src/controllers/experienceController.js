@@ -6,7 +6,7 @@ const getAllExperinece = async (req, res, next) => {
     const experienceData = await Experience.find();
     console.log(experienceData);
 
-    res.status(200).json(experienceData);
+    res.status(200).json({ status: 200, experienceData: experienceData });
   } catch (error) {
     return next(createHttpError(500, { message: error }));
   }

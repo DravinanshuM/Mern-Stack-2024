@@ -54,6 +54,13 @@ const introSchema = new mongoose.Schema(
       minLength: [20, "Caption must be at least 20 characters"],
       maxLength: [100, "Caption cannot exceed 100 characters"],
     },
+    
+    designation: {
+      type: String,
+      required: [true, "Designation is required"],
+      minLength: [20, "Caption must be at least 20 characters"],
+      maxLength: [100, "Caption cannot exceed 100 characters"],
+    },
 
     description: {
       type: String,

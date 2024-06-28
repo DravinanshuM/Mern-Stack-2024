@@ -6,7 +6,7 @@ const getAllProject = async (req, res, next) => {
     const projectData = await Project.find();
     console.log(projectData);
 
-    res.status(200).json(projectData);
+    res.status(200).json({ status: 200, projectData: projectData });
   } catch (error) {
     return next(createHttpError(500, { message: error }));
   }
