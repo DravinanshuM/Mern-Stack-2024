@@ -4,4 +4,5 @@
 2. npm install react-icons.
 3. npm install @reduxjs/toolkit : redux.
 4. npm install react-redux :: redux
-5. npm i axios
+5. npm i axios.
+6. npm i antd :: for better UI designing.

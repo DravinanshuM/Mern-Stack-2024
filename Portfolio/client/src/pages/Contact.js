@@ -7,13 +7,13 @@ import { setContactData } from "../features/contectSlice.js";
 const Contact = () => {
   const dispatch = useDispatch();
   const { contactData } = useSelector((state) => state.contact);
-  console.log("ContactData ::: ", contactData);
+  // console.log("ContactData ::: ", contactData);
 
   //getContact.
   const getContact = useCallback(async () => {
     try {
       const response = await getContactFunction();
-      console.log("Get Contact :: ", response);
+      // console.log("Get Contact :: ", response);
       if (response?.data?.status === 200) {
         dispatch(setContactData(response.data.contactData));
       }
