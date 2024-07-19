@@ -34,10 +34,21 @@ const getProjectFunction = async () => {
   return await commonRequest("GET", `${BASE_URL}/api/project/all-data`, null);
 };
 
+// 1. updated. intro.
+const updateIntroDataFunction = async (data) => {
+  return await commonRequest(
+    "POST",
+    `${BASE_URL}/api/introduction/all-update`,
+    data,
+    null
+  );
+};
+
 export {
   getInroDataFunction,
   getAboutFunction,
   getContactFunction,
   getExperienceFunction,
   getProjectFunction,
+  updateIntroDataFunction,
 };

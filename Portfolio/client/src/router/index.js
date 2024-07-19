@@ -3,6 +3,7 @@ import App from "../App.js";
 
 import { About, Contact, Error, Home } from "../pages/index.js";
 
+import Admin from "../admin/index.js";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         element: <Error />,
       },
     ],
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
   },
 ]);
 

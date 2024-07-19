@@ -10,7 +10,7 @@ import { setIntroData } from "../features/introSlice.js";
 const Home = () => {
   const dispatch = useDispatch();
   const { introData } = useSelector((state) => state.intro);
-  // console.log("show Data :: ", introData);
+  console.log("show Data :: ", introData);
 
   // get the API data.
   const getAllInto = useCallback(async () => {
@@ -41,14 +41,16 @@ const Home = () => {
           <>
             <div className="flex flex-wrap flex-col-reverse md:flex-row md:items-center lg:flex lg:items-center lg:justify-between lg:px-20">
               <div className="md:max-w-3xl lg:mx-auto p-8 shadow-lg rounded-lg cursor-pointer md:hover:scale-110 md:transition lg:ease-in-out md:hover:shadow-xl">
-                <p className="text-xl text-gray-700 dark:text-white mb-4">
-                  {introData[0].welcomeText || ""},{" "}
+                <p className="text-xl text-gray-700 dark:text-white mb-2">
+                  {introData[0].welcomeText || ""}
+                </p>
+                <p className="text-3xl text-gray-700 dark:text-white mb-3 mx-16">
                   {introData[0].firstName || ""} {introData[0].lastName || ""}
                 </p>
-                <p className="font-bold text-3xl capitalize text-gray-800 dark:text-white mb-2">
+                <p className="font-bold text-2xl mx-24 capitalize text-gray-800 dark:text-white mb-2">
                   {introData[0].caption || ""}
                 </p>
-                <q className="font-extrabold text-3xl uppercase block text-blue-700 dark:text-orange-500 mb-4">
+                <q className="font-extrabold text-xl mx-[120px] uppercase block text-blue-700 dark:text-orange-500 mb-4">
                   {introData[0].designation || ""}
                 </q>
                 <span className="font-medium text-base text-gray-600 dark:text-gray-400">
