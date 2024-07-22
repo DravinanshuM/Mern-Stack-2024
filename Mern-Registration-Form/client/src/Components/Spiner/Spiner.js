@@ -1,5 +1,5 @@
-import React from 'react'
-import './Spiner.css';
+import React from "react";
+import "./Spiner.css";
 
 const Spiner = () => {
   return (
@@ -9,7 +9,7 @@ const Spiner = () => {
         <div class="spinner-border ms-auto" aria-hidden="true"></div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Spiner
+export default Spiner;

@@ -45,3 +45,5 @@ npm install express mongodb dotenv nodemon
 1. npm i validator ::
 2. npm i cors ::
 3. npm i http-errors ::
+4. npm i multer.
+5. npm i cloudinary.

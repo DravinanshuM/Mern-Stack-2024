@@ -4,7 +4,7 @@ import Intro from "../models/homeModel.js";
 const getAllIntro = async (req, res, next) => {
   try {
     const introData = await Intro.find();
-    console.log("data", introData);
+    // console.log("data", introData);
 
     res.status(200).json({ status: 200, introData: introData });
   } catch (error) {
@@ -13,7 +13,7 @@ const getAllIntro = async (req, res, next) => {
 };
 
 const updateAllIntro = async (req, res, next) => {
-  console.log(req.body); // Log the incoming request body for debugging
+  // console.log(req.body); // Log the incoming request body for debugging
 
   try {
     const intro = await Intro.findOneAndUpdate(
