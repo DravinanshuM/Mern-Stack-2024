@@ -67,6 +67,8 @@ const IntroAdmin = () => {
         _id: introData[0]._id,
       });
 
+      console.log(formData);
+
       if (response?.data?.status === 200) {
         let message = response?.data?.message;
         console.log("formdata ::", response);
@@ -81,7 +83,11 @@ const IntroAdmin = () => {
 
   return (
     <div className="w-full max-w-screen-lg p-4 border-2 border-indigo-500 dark:border-white">
-      <form className="px-4 py-4" onSubmit={handleformsubmit}>
+      <form
+        className="px-4 py-4"
+        onSubmit={handleformsubmit}
+        enctype="multipart/form-data"
+      >
         {/* Welcome Text */}
         <div className="mb-6 mx-2">
           <label
